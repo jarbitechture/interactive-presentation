@@ -164,5 +164,14 @@ def create_chart():
     st.bar_chart(df.set_index("Skill"))
 
 # Sidebar navigation
-st.sidebar.title("Navigation
+st.sidebar.title("Navigation")
+page = st.sidebar.radio("Go to", ["Home", "Personal Brainstorm", "Manager Discussion", "Reflection Objective", "Skills Development Chart"])
+
+# Page content
+if page == "Home":
+    home()
+elif page in sections:
+    display_section(page, sections[page])
+elif page == "Skills Development Chart":
+    create_chart()
 
