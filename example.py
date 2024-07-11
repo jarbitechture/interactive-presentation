@@ -5,29 +5,38 @@ import matplotlib.pyplot as plt
 # Set the page configuration
 st.set_page_config(page_title="H1 Review Presentation", page_icon="🌿", layout="wide")
 
-# Custom CSS for better aesthetics
+# Improved Custom CSS for better aesthetics
 st.markdown("""
     <style>
     body {
-        background-color: #e0f7fa;
-        font-family: 'Arial', sans-serif;
+        background-color: #f0f4f7;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .main-header {
-        background-color: #00695c;
-        padding: 10px;
+        background-color: #00796b;
+        padding: 20px;
         text-align: center;
         color: white;
-        border-radius: 10px;
+        border-radius: 8px;
     }
     .section {
         background-color: #ffffff;
         padding: 20px;
-        margin: 10px 0;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .section h2 {
+        color: #004d40;
+    }
+    .section h3 {
+        color: #00796b;
     }
     .sidebar .sidebar-content {
         background-color: #004d40;
+        color: white;
+    }
+    .sidebar .sidebar-content h2 {
         color: white;
     }
     </style>
