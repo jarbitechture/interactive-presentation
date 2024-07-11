@@ -1,4 +1,7 @@
+
 __pycache__/
 interactive-presentation-env/
 .env
+.nvm
+.oh-my-zsh
 
