@@ -3,7 +3,42 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Set the page configuration
-st.set_page_config(page_title="H1 Review Presentation", page_icon="📊", layout="wide")
+st.set_page_config(page_title="H1 Review Presentation", page_icon="🌿", layout="wide")
+
+# Custom CSS for background and animations
+st.markdown("""
+    <style>
+    body {
+        background-color: #f0f0f0;
+        background-image: url('https://www.transparenttextures.com/patterns/weed.png');
+    }
+    .header {
+        animation: fadeIn 2s ease-in-out;
+        text-align: center;
+        color: #4CAF50;
+    }
+    .animated-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 20px;
+        color: #fff;
+        background-color: #4CAF50;
+        border-radius: 5px;
+        text-decoration: none;
+        animation: bounce 2s infinite;
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-20px); }
+        60% { transform: translateY(-10px); }
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Data and Content
 sections = {
@@ -102,8 +137,12 @@ sections = {
 
 # Define the pages
 def home():
-    st.title("H1 Review Presentation")
+    st.markdown("<div class='header'><h1>H1 Review Presentation</h1></div>", unsafe_allow_html=True)
     st.write("Welcome to the H1 Review Presentation. Use the sidebar to navigate through the sections.")
+    st.markdown("<a href='#' class='animated-button'>Explore Personal Brainstorm</a>", unsafe_allow_html=True)
+    st.markdown("<a href='#' class='animated-button'>Explore Manager Discussion</a>", unsafe_allow_html=True)
+    st.markdown("<a href='#' class='animated-button'>Explore Reflection Objective</a>", unsafe_allow_html=True)
+    st.markdown("<a href='#' class='animated-button'>Explore Skills Development Chart</a>", unsafe_allow_html=True)
 
 def display_section(section_name, content):
     st.title(section_name)
@@ -125,14 +164,5 @@ def create_chart():
     st.bar_chart(df.set_index("Skill"))
 
 # Sidebar navigation
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Personal Brainstorm", "Manager Discussion", "Reflection Objective", "Skills Development Chart"])
-
-# Page content
-if page == "Home":
-    home()
-elif page in sections:
-    display_section(page, sections[page])
-elif page == "Skills Development Chart":
-    create_chart()
+st.sidebar.title("Navigation
 
