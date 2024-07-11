@@ -5,40 +5,33 @@ import matplotlib.pyplot as plt
 # Set the page configuration
 st.set_page_config(page_title="H1 Review Presentation", page_icon="🌿", layout="wide")
 
-# Custom CSS for background and animations
+# Custom CSS for better aesthetics
 st.markdown("""
     <style>
     body {
-        background-color: #f0f0f0;
-        background-image: url('https://www.transparenttextures.com/patterns/weed.png');
+        background-color: #e0f7fa;
+        font-family: 'Arial', sans-serif;
     }
-    .header {
-        animation: fadeIn 2s ease-in-out;
+    .main-header {
+        background-color: #00695c;
+        padding: 10px;
         text-align: center;
-        color: #4CAF50;
+        color: white;
+        border-radius: 10px;
     }
-    .animated-button {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 10px;
-        font-size: 20px;
-        color: #fff;
-        background-color: #4CAF50;
-        border-radius: 5px;
-        text-decoration: none;
-        animation: bounce 2s infinite;
+    .section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-20px); }
-        60% { transform: translateY(-10px); }
+    .sidebar .sidebar-content {
+        background-color: #004d40;
+        color: white;
     }
     </style>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # Data and Content
 sections = {
@@ -137,22 +130,25 @@ sections = {
 
 # Define the pages
 def home():
-    st.markdown("<div class='header'><h1>H1 Review Presentation</h1></div>", unsafe_allow_html=True)
-    st.write("Welcome to the H1 Review Presentation. Use the sidebar to navigate through the sections.")
-    st.markdown("<a href='#' class='animated-button'>Explore Personal Brainstorm</a>", unsafe_allow_html=True)
-    st.markdown("<a href='#' class='animated-button'>Explore Manager Discussion</a>", unsafe_allow_html=True)
-    st.markdown("<a href='#' class='animated-button'>Explore Reflection Objective</a>", unsafe_allow_html=True)
-    st.markdown("<a href='#' class='animated-button'>Explore Skills Development Chart</a>", unsafe_allow_html=True)
+    st.markdown("""
+        <div class="main-header">
+            <h1>Welcome to the H1 Review Presentation</h1>
+        </div>
+        <div class="section">
+            <p>Use the sidebar to navigate through the sections.</p>
+        </div>
+    """, unsafe_allow_html=True)
 
 def display_section(section_name, content):
-    st.title(section_name)
+    st.markdown(f"<div class='section'><h2>{section_name}</h2>", unsafe_allow_html=True)
     for key, value in content.items():
-        st.subheader(key)
+        st.markdown(f"<h3>{key}</h3>", unsafe_allow_html=True)
         if isinstance(value, list):
             for item in value:
-                st.write(f"- {item}")
+                st.markdown(f"<p>- {item}</p>", unsafe_allow_html=True)
         else:
-            st.write(value)
+            st.markdown(f"<p>{value}</p>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 def create_chart():
     st.subheader("Skills Development Progress")
