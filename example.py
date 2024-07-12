@@ -5,38 +5,32 @@ import matplotlib.pyplot as plt
 # Set the page configuration
 st.set_page_config(page_title="H1 Review Presentation", page_icon="🌿", layout="wide")
 
-# Improved Custom CSS for better aesthetics
+# Custom CSS for better aesthetics
 st.markdown("""
     <style>
     body {
         background-color: #f0f4f7;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Arial', sans-serif;
     }
     .main-header {
-        background-color: #00796b;
+        background-color: #2c3e50;
         padding: 20px;
         text-align: center;
         color: white;
-        border-radius: 8px;
+        border-radius: 10px;
     }
     .section {
         background-color: #ffffff;
         padding: 20px;
-        margin: 20px 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .section h2 {
-        color: #004d40;
-    }
-    .section h3 {
-        color: #00796b;
+    .section h2, .section h3 {
+        color: #2c3e50;
     }
     .sidebar .sidebar-content {
-        background-color: #004d40;
-        color: white;
-    }
-    .sidebar .sidebar-content h2 {
+        background-color: #16a085;
         color: white;
     }
     </style>
@@ -44,95 +38,81 @@ st.markdown("""
 
 # Data and Content
 sections = {
-    "Personal Brainstorm": {
+    "Professional Development Objectives": {
         "What am I passionate about?": [
             "Integrating advanced marketing technologies to drive strategic business outcomes.",
             "Leveraging data to create personalized customer experiences.",
             "Fostering cross-functional collaboration.",
-            "Continuous learning and application of the latest trends in MarTech."
+            "Exploring the potential of AI and machine learning to revolutionize marketing strategies.",
+            "Utilizing Customer Data Platforms (CDPs) to enhance customer insights and engagement."
         ],
         "What would I consider as my dream job?": [
-            "A Chief Marketing Technologist role, leading the integration and optimization of marketing technologies at a strategic level.",
-            "A Senior Digital Manager - CDP & Marketing Automations, overseeing CDP implementation and automation to drive innovation and growth."
+            "Chief Marketing Technologist or Senior Digital Manager focused on CDP and Marketing Automations.",
+            "Leading the integration and optimization of marketing technologies at a strategic level.",
+            "Overseeing the deployment of Segment and other CDP platforms.",
+            "Ensuring seamless data integration and developing automated marketing workflows."
         ],
         "What background skills do I already have?": [
-            "Expertise in Segment and Customer.io.",
-            "Deep understanding of data analytics and machine learning.",
-            "Strong project management and cross-functional collaboration skills.",
-            "Vendor evaluation and partnership management.",
-            "Proficiency in data analysis and data-driven decision-making."
+            "Proficient in Segment, Customer.io, and Snowflake for data warehousing.",
+            "Experience with Python and Cloud Computing.",
+            "Strong understanding of data analytics and the application of machine learning models to predict customer behavior.",
+            "Experience in leading cross-functional teams and managing projects from start to finish.",
+            "Skilled in evaluating vendors and managing strategic partnerships."
         ],
         "What skills do I need to develop?": [
-            "Advanced data governance and security protocols.",
-            "Leadership and team management.",
-            "Emerging marketing technology trends and tools.",
-            "Enhanced communication strategies for diverse stakeholders."
+            "Advanced Data Governance and Security: To ensure compliance and data integrity.",
+            "Leadership and Team Management: To effectively oversee larger projects and mentor team members.",
+            "Emerging Marketing Technology Trends: Staying updated with the latest tools and trends in the MarTech landscape.",
+            "Enhanced Communication Strategies: For presenting complex technical concepts to executive stakeholders and non-technical team members."
         ],
         "What is the one thing holding me back right now?": [
             "Limited exposure to leadership roles and opportunities to lead large-scale projects independently.",
-            "Limited permissions and access to key data systems (e.g., Snowflake) restricting independent execution.",
-            "Dependency on the development team for project completion, leading to delays and bottlenecks.",
-            "Inability to expand the role due to budget constraints and limitations in investing in new marketing technologies."
+            "Dependency on the development team for project completion.",
+            "Increasing access to Snowflake and developing more in-house coding and automation skills would mitigate these issues."
         ]
     },
-    "Manager Discussion": {
+    "Role Reflection": {
         "These are my 3 key strengths today:": [
-            "Deep technical expertise in marketing technologies and data platforms.",
-            "Strong analytical and data-driven decision-making.",
-            "Effective cross-functional collaboration and project management."
+            "Deep knowledge of marketing technologies and data platforms, including Segment, Customer.io, and Snowflake. Additionally, experience with Python, cloud computing, CRM systems, SEO, content marketing, and marketing automation.",
+            "Strong ability to analyze data and make data-driven decisions to optimize marketing strategies.",
+            "Proven track record of managing cross-functional projects and delivering results on time and within budget."
         ],
         "These are 3 areas for development:": [
-            "Leadership and team management skills.",
-            "Advanced data governance and security knowledge.",
-            "Enhanced communication and presentation skills for executive stakeholders."
+            "Leadership and Team Management: Need to develop skills to lead larger projects and mentor team members.",
+            "Data Governance and Security: Advanced knowledge of data governance and security protocols is essential.",
+            "Communication Skills: Improved ability to present complex technical concepts to executive stakeholders and non-technical team members."
         ],
         "These are the 3 things to work on over the next 6-12 months:": [
-            "Take on leadership roles in larger projects to build management experience.",
-            "Pursue training or certifications in data governance and security.",
-            "Develop and deliver presentations to executive teams to refine communication skills.",
-            "Secure expanded access to key data systems to reduce dependencies.",
-            "Participate in leadership training programs.",
-            "Undertake courses in AI and machine learning relevant to marketing."
+            "Lead a Major Project Independently: Take ownership of a significant project from start to finish to build leadership experience.",
+            "Pursue Training in Data Governance and Security: Enroll in courses or certifications to enhance knowledge in this area.",
+            "Develop and Deliver Presentations to Executive Teams: Regularly present strategic initiatives and project updates to executive stakeholders to refine communication skills."
         ]
     },
-    "Reflection Objective": {
+    "Reflection Objectives": {
         "What are you like at your best? What do you want to continue doing to maximize when you feel this way?": [
-            "At my best, I am innovative, strategic, and collaborative, thriving in solving complex problems and driving meaningful change.",
-            "To maximize this, I will continue to seek out challenging projects and foster strong relationships with my team, embracing opportunities for collaboration across departments."
+            "At my best, I am innovative, strategic, and collaborative. I excel in solving complex problems and driving meaningful change. To maximize this, continue to seek challenging projects and foster strong relationships with the team."
         ],
         "How can your manager/team best support you to be at your best? What do you need from each of them?": [
-            "My manager can support me by providing opportunities for leadership, professional development, clear objectives, and regular feedback.",
-            "Reducing dependency on other teams by providing more autonomy and access to necessary tools will be beneficial.",
-            "The team can support by maintaining open communication, collaboration, and a collaborative work environment."
+            "My manager can support me by providing opportunities for leadership and professional development. Additionally, reducing dependency on the development team by providing more autonomy and access to necessary tools will be beneficial."
         ],
         "What are you like when you’re not at your best? What are the signs or triggers you need to watch for to avoid showing up this way?": [
-            "When not at my best, I can be overly focused on details and less effective at delegating, becoming frustrated and disengaged when facing bureaucratic hurdles or lack of resources.",
-            "Signs include feeling overwhelmed, micro-managing, procrastination, and decreased motivation.",
-            "To avoid this, I need to watch for these triggers, delegate more effectively, proactively seek solutions, and maintain open communication with my manager about obstacles."
+            "When not at my best, I can be overly focused on details and less effective at delegating. Signs include feeling overwhelmed and micro-managing. To avoid this, watch for these triggers and delegate more effectively."
         ],
         "When the situation isn’t set up for you to show up at your best, what are things you want to work on?": [
-            "I want to work on maintaining focus on strategic objectives, improving stress management techniques, and seeking support when needed.",
-            "Enhancing my coding and automation skills will also help reduce reliance on the development team.",
-            "Improving resilience, adaptability, and skills in navigating organizational barriers and securing necessary resources are key areas of focus."
+            "Maintain focus on strategic objectives, improve stress management techniques, and seek support when needed. Enhancing my coding and automation skills will also help reduce reliance on the development team."
         ],
         "Where do you want to grow in the coming year? Where do you hope to see this growth take you over the next 3 years?": [
-            "I want to grow in leadership and team management, expanding my expertise in AI and machine learning applications for marketing.",
-            "Over the next 3 years, I hope to transition into a senior leadership role where I can influence broader strategic decisions and lead significant MarTech initiatives independently."
+            "I want to grow in leadership and team management. Over the next 3 years, I hope to transition into a senior leadership role where I can influence broader strategic decisions and lead significant MarTech initiatives independently."
         ],
         "If you can show up as the leader and employee you aspire to be, what difference will it make? What will be possible?": [
-            "It will drive greater innovation and efficiency within the team, leading to more successful projects and strategic growth.",
-            "It will also create a more collaborative and motivated team environment, enabling us to tackle larger, more complex projects with greater autonomy.",
-            "This will lead to highly personalized and effective marketing campaigns, ultimately contributing to the company's growth and success."
+            "It will drive greater innovation and efficiency within the team, leading to more successful projects and strategic growth. This will create a more collaborative and motivated team environment and enable me to tackle larger, more complex projects with greater autonomy."
         ],
         "Are there specific goals you want to set for yourself for your growth and development? What would truly elevate you to the next level?": [
-            "Lead at least one major project from start to finish independently, demonstrating my ability to manage large-scale projects.",
-            "Complete a leadership development program, building my leadership skills and preparing for a senior leadership role.",
-            "Regularly present strategic initiatives and project outcomes to executive teams, improving my communication skills.",
-            "Gain advanced certifications in data governance and security to ensure compliance and data integrity across all marketing initiatives.",
-            "Improve data integration and automation processes within our MarTech stack.",
-            "Completing advanced certifications in AI and machine learning.",
-            "Leading a major MarTech integration project that demonstrates significant ROI.",
-            "Developing and mentoring a team of MarTech specialists."
+            "Lead a Major Project Independently: Demonstrate my ability to manage large-scale projects from start to finish.",
+            "Complete a Leadership Development Program: Build my leadership skills and prepare for a senior leadership role.",
+            "Regularly Present to Executive Teams: Improve my ability to communicate strategic initiatives and project outcomes effectively.",
+            "Gain Advanced Certifications in Data Governance and Security: Ensure compliance and data integrity across all marketing initiatives.",
+            "Improve Data Integration and Automation Processes: Develop a comprehensive plan to enhance data integration and automation within our MarTech stack."
         ]
     }
 }
@@ -170,7 +150,7 @@ def create_chart():
 
 # Sidebar navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Personal Brainstorm", "Manager Discussion", "Reflection Objective", "Skills Development Chart"])
+page = st.sidebar.radio("Go to", ["Home", "Professional Development Objectives", "Role Reflection", "Reflection Objectives", "Skills Development Chart"])
 
 # Page content
 if page == "Home":
